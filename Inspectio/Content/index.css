@@ -1,0 +1,100 @@
+﻿* {
+    font-family: Roboto;
+}
+
+body {
+    background-color: #212121;
+}
+
+div.navbar {
+    background-color: #000000;
+}
+
+.material-icons {
+    font-size: 14px;
+}
+
+.page-container {
+    padding-top: 1em;
+}
+
+.btn-primary {
+    background-color: #0073C6;
+}
+
+.upload-photo-area {
+    width: 40%;
+}
+
+div.upload-photo-area > form > input[type="file"], .upload-photo-area > form > input[type="submit"] {
+    display: none;
+}
+
+#upload-button {
+    font-size: 14px;
+}
+
+.image-area {
+    border-top: 1px solid #484848;
+    padding-top: 1em;
+}
+
+.image-area > div {
+    text-align: center;
+}
+
+.image-area > div > a > img {
+    padding: 0.5em;
+    width: 192px;
+}
+
+.image-area > div > a:hover {
+    text-decoration: none;
+}
+
+.image-area > div > a > img:hover {
+    background-color: #484848;
+    border-radius: 1em;
+}
+
+.operations-panel {
+    display: flex;
+    align-items: center;
+}
+
+.search-area {
+    text-align: right;
+    justify-content: flex-end;
+    width: 60%;
+}
+
+#search-box {
+    max-width: 800px;
+}
+
+.input-group > input[type="text"] {
+    border-color: #424242;
+    background-color: #424242;
+    color: #FFFFFF;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    font-family: Roboto;
+    border: 1px solid #424242;
+    -webkit-text-fill-color: #FFFFFF;
+    -webkit-box-shadow: 0 0 0px 1000px #424242 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.search-area > form.navbar-form {
+    padding-right: 0px;
+    -webkit-box-shadow: none;
+}

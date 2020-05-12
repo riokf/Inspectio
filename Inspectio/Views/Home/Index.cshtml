@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Inspectio Home Page";
+}
+
+@using Inspectio.Models
+
+<div class="container page-container">
+    <div class="row operations-panel">
+        <div class="col-sm-8 upload-photo-area">
+            @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <input type="file" name="file" id="upload" />
+                <input type="button" id="upload-button" value="Upload" class="btn btn-primary btn-sm" />
+                <input type="submit" id="submit" />
+            }
+        </div>
+        <div class="col-sm-4 search-area">
+            @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "navbar-form" }))
+            {
+                <div class="input-group">
+                    <input type="text" class="form-control" id="search-box" placeholder="Search photos" name="term" value="@ViewBag.Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </span>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="row image-area">
+        <div class="col-sm-12">
+            @foreach (BlobInfo blob in ViewBag.Blobs)
+            {
+                <a href="@blob.ImageUri" rel="lightbox" title="@blob.Caption">
+                    <img src="@blob.ThumbnailUri" title="@blob.Caption" />
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" language="javascript">
+        if ("@TempData["Message"]" !== "") {
+            alert("@TempData["Message"]");
+        }
+    </script>
+}
